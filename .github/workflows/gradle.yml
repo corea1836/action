@@ -37,7 +37,14 @@ jobs:
     ## 빌드 아티팩트 확인
       - name: Show structure of artiface files
         run: ls -ahl ./build/libs/*.jar
-        
+    ## 빌드 아티팩트 업로드
+      - name: Upload build artifact for job
+        uses: actions/upload-artifact@v3
+        with:
+          ## 업로드 키 값
+          name: project_artiface
+          ## Gradle의 경우
+          path: "./build/libs/*.jar"        
       
     
 

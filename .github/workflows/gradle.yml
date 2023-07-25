@@ -34,7 +34,9 @@ jobs:
     ## 빌드
       - name: Build with Gradle
         run: ./gradlew build
-
+    ## 빌드 아티팩트 확인
+      - name: Show structure of artiface files
+        run: ls -ahl ./build/libs/*.jar
         
       
     

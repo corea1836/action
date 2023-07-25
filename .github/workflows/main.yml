@@ -8,7 +8,7 @@ on:
 
 jobs:
   test:
-    runs-on: buntu-18.04
+    runs-on: ubuntu-18.04
     name: Build
     steps:
       - name: SSH Remote Commands

@@ -7,9 +7,8 @@ on:
 ######### master branch에 push 되었을때만 실행#########
 
 jobs:
-  test:
+  build:
     runs-on: ubuntu-18.04
-    name: Build
     steps:
       - name: SSH Remote Commands
         uses: appleboy/ssh-action@v0.1.4        

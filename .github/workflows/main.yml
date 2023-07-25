@@ -1,0 +1,23 @@
+name: connect test
+
+######### master branch에 push 되었을때만 실행#########
+on: 
+  push:            
+    branches: [ "main" ]
+######### master branch에 push 되었을때만 실행#########
+
+jobs:
+  test:
+    runs-on: buntu-18.04
+    name: Build
+    steps:
+      - name: SSH Remote Commands
+        uses: appleboy/ssh-action@v0.1.4        
+        with:
+          host: ${{ secrets.NCP_DEV_SERVER_IP }}          
+          username: ${{ secrets.NCP_DEV_SERVER_USER }}
+          password: ${{ secrets.NCP_DEV_SERVER_PASSWORD }}
+          port: ${{ secrets.NCP_DEV_SERVER_SSH_PORT }}
+          timeout: 40s  # 30초 기본        
+          script: |
+            echo "테스트 출력"
